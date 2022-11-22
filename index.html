@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Karla:ital,wght@0,400;0,600;0,800;1,200;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Red+Hat+Display:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <title>Frontend Mentor | News homepage</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    * {
+      font-family: 'Inter', sans-serif;
+      background-color: hsl(36, 100%, 99%);
+      margin: 0;
+      padding: 0;
+    }
+
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+
+    .main-container {
+      padding: 3% 10% 0% 10%;
+    }
+
+    /* nav styling */
+    nav {
+      /* min-width: 100vw; */
+      /* width: auto; */
+      /* background-color: red; */
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo h1 {
+      /* background-color: red; */
+      font-size: 40px;
+    }
+
+    nav ul {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    nav ul li {
+      list-style: none;
+      padding: 20px;
+      color: hsl(236, 13%, 42%);
+      cursor: pointer;
+      transform: scale(2px);
+      transition: all 0.3s ease;
+    }
+
+    nav ul li:hover {
+      color: hsl(5, 85%, 63%);
+    }
+
+    /* hero section */
+    .main-hero-section {
+      padding: 4% 0%;
+      max-width: 100vw;
+      width: auto;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 2fr 2fr;
+      gap: 2rem;
+    }
+
+    .hero-picture {
+      width: 50rem;
+      /* overflow: hidden; */
+    }
+
+    .second-main-grid {
+      background-color: hsl(240, 100%, 5%);
+      width: 25vw;
+      height: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .first-card {
+      line-height: 2rem;
+    }
+
+    .first-card h1 {
+      color: white;
+      background-color: hsl(240, 100%, 5%);
+      padding: 10px 20px;
+      color: hsl(35, 77%, 62%);
+    }
+
+    .first-card h3 {
+      color: white;
+      background-color: hsl(240, 100%, 5%);
+      /* border-bottom: 1px solid hsl(233, 8%, 79%); */
+      padding: 10px 20px;
+    }
+
+    .first-card h3 span {
+      background-color: hsl(240, 100%, 5%);
+      color: hsl(233, 8%, 79%);
+    }
+
+    .second-card h2,
+    .second-card p,
+    .third-card h2,
+    .third-card p {
+      color: white;
+      background-color: hsl(240, 100%, 5%);
+      padding: 10px 20px;
+    }
+
+    .second-card p,
+    .third-card p {
+      color: hsl(233, 8%, 79%);
+      /* border-bottom: 1px solid white; */
+      /* padding-bottom: 20px; */
+    }
+
+    .second-card h2:hover,
+    .third-card h2:hover {
+      color: hsl(35, 77%, 62%);
+      cursor: pointer;
+    }
+
+    .second-grid {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      flex-direction: column;
+      gap: 1.2rem;
+      background-color: hsl(240, 100%, 5%);
+    }
+
+    /* over of main hero section */
+    /*  */
+    /* now the sub gridsecton  */
+    .sub-grid {
+      display: grid;
+      grid-template-columns: 2fr 2fr;
+      gap: 2rem;
+      padding: 2rem 0rem 0rem 0rem;
+    }
+
+    .first-sub-grid-section h1 {
+      font-size: 50px;
+    }
+
+    .sub-sub-grid-section p {
+      color: hsl(236, 13%, 42%);
+      letter-spacing: 1px;
+      font-size: 15px;
+      line-height: 18px;
+    }
+
+    .sub-sub-grid-section button {
+      background-color: hsl(5, 85%, 63%);
+      padding: 10px 20px;
+      letter-spacing: 2px;
+      font-weight: 700;
+      /* margin: 20px; */
+      display: flex;
+      font-size: 20px;
+      /* border-radius: 5px; */
+      border: none;
+      outline: none;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      margin: 2rem 0rem;
+      /* box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); */
+      transition: 0.3s ease;
+    }
+
+    .sub-sub-grid-section button:hover {
+      box-shadow: none;
+      background-color: hsl(240, 100%, 5%);
+      color: hsl(233, 8%, 79%);
+      cursor: pointer;
+    }
+
+    .main-bottom {
+      max-width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 0.5rem;
+      align-items: center;
+      justify-content: center;
+      width: auto;
+      place-items: center;
+      justify-content: center;
+    }
+
+    .card-first,
+    .card-second,
+    .card-third {
+      gap: 1rem;
+      display: flex;
+      align-items: center;
+      /* justify-content: space-between; */
+    }
+
+    .details-card {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .main-bottom h1 {
+      color: hsl(236, 13%, 42%);
+    }
+
+    .main-bottom p {
+      color: hsl(236, 13%, 42%);
+      /* padding: 20px; */
+    }
+
+    .card-first:hover {
+      color: hsl(5, 85%, 63%);
+      cursor: pointer;
+    }
+
+    .card-second:hover {
+      cursor: pointer;
+      color: hsl(5, 85%, 63%);
+    }
+
+    .card-third:hover {
+      color: hsl(5, 85%, 63%);
+      cursor: pointer;
+    }
+
+    .main-bottom {
+      /* background-color: red; */
+      padding: 4% 0%;
+    }
+
+
+
+    .menu .open {
+      display: none;
+    }
+
+    .menu .close {
+      display: none;
+    }
+
+    @media (max-width:1480px) {
+      .main-hero-section {
+        /* padding: 4% 0%;
+        max-width: 100vw;
+        width: auto;
+        overflow: hidden;
+        /* gap: 2rem; */
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+
+      .hero-picture {
+        width: 71rem;
+      }
+
+      .sub-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .first-sub-grid-section h1,
+      .sub-sub-grid-section p {
+        width: 82vw;
+      }
+
+      .first-sub-grid-section h1 {
+        font-size: 30px;
+      }
+
+      .sub-sub-grid-section button {
+        background-color: hsl(5, 85%, 63%);
+        padding: 10px 20px;
+        letter-spacing: 2px;
+        font-weight: 700;
+        margin: 20px;
+        display: flex;
+        font-size: 20px;
+        border-radius: 5px;
+        border: none;
+        outline: none;
+        align-items: center;
+        justify-content: center;
+        max-width: 100%;
+        width: 82vw;
+        margin: 2rem 0rem;
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+        transition: 0.3s ease;
+      }
+
+      .second-grid {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-direction: column;
+        gap: 1.2rem;
+        background-color: hsl(240, 100%, 5%);
+        padding: 10px !important;
+      }
+
+      .second-main-grid {
+        background-color: hsl(240, 100%, 5%);
+        width: 82vw;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* .main-bottom {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        align-items: center;
+        justify-content: center;
+      } */
+
+      .card-first,
+      .card-second,
+      .card-third {
+        gap: 1rem;
+        padding: 0px 71px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+
+    @media (max-width:1480px) {
+      .main-bottom {
+        max-width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        place-items: center;
+        justify-content: center;
+      }
+    }
+
+    @media (max-width:732px) {
+      nav ul {
+        position: fixed;
+        /* display: none; */
+        bottom: 0;
+        top: 4rem;
+        width: 100%;
+        left: 0;
+        top: 0;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 34vh;
+        z-index: 1;
+        transform: scale(20deg);
+        transition: all 2s ease;
+      }
+
+      .menu .open {
+        position: relative;
+        display: block;
+        z-index: 111;
+      }
+
+      .menu .close {
+        position: relative;
+        display: none;
+        z-index: 111;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- <h1>Hello World !!</h1> -->
+  <div class="main-container">
+    <!-- nav bar start -->
+    <nav>
+      <div class="logo">
+        <h1>W.</h1>
+      </div>
+      <div class="nav-ul">
+        <ul class="main-ul">
+          <li>Home</li>
+          <li>New</li>
+          <li>Popular</li>
+          <li>Trending</li>
+          <li>Categories</li>
+        </ul>
+        <div class="menu">
+          <div class="open">
+            <img src="./assets/images/icon-menu.svg" alt="icon-menu">
+          </div>
+          <div class="close">
+            <img src="./assets/images/icon-menu-close.svg" alt="icon-menu-close">
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- nav bar end  -->
+
+    <!-- hero section -->
+    <div class="main-hero-section">
+      <div class="first-main-grid">
+        <div class="img-main-gird">
+          <img src="./assets/images/image-web-3-desktop.jpg" alt="" class="hero-picture">
+        </div>
+        <div class="sub-grid">
+          <div class="first-sub-grid-section">
+            <h1>
+              The Bright Future of Web 3.0?
+            </h1>
+          </div>
+          <div class="second-sub-grid-section">
+            <div class="sub-sub-grid-section">
+              <p>
+                We dive into the next evolution of the web that claims to put the power of the platforms back into the
+                hands of the
+                people.
+                But is it really fulfilling its promise?
+              </p>
+              <button>
+                Read more
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="second-main-grid">
+        <div class="second-grid">
+          <div class="first-card">
+            <h1>
+              New
+            </h1>
+            <h3>
+              Hydrogen VS Electric Cars <br>
+              <span>
+                Will hydrogen-fueled cars ever catch up to EVs?
+              </span>
+            </h3>
+          </div>
+          <div class="second-card">
+            <h2>
+              The Downsides of AI Artistry
+            </h2>
+            <p>
+              What are the possible adverse effects of on-demand AI image generation?
+            </p>
+          </div>
+          <div class="third-card">
+            <h2>
+              Is VC Funding Drying Up?
+            </h2>
+            <p>
+              Private funding by VC firms is down 50% YOY. We take a look at what that means.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- hero section over -->
+    <div class="bottom">
+      <div class="bottom-container">
+        <div class="main-bottom">
+          <div class="card-first">
+            <img src="./assets/images/image-retro-pcs.jpg" alt="retro">
+            <div class="details-card">
+              <div class="head">
+                <h1>01</h1>
+              </div>
+              <h3>
+                Reviving Retro PCs
+              </h3>
+              <p>
+                What happens when old PCs are given modern upgrades?
+              </p>
+            </div>
+          </div>
+          <div class="card-second">
+            <img src="./assets/images/image-top-laptops.jpg" alt="retro">
+            <div class="details-card">
+              <h1>02</h1>
+              <h3>
+                Top 10 Laptops of 2022
+              </h3>
+              <p>
+                Our best picks for various needs and budgets.
+                <!-- What happens when old PCs are given modern upgrades? -->
+              </p>
+            </div>
+          </div>
+          <div class="card-third">
+            <img src="./assets/images/image-gaming-growth.jpg" alt="retro">
+            <div class="details-card">
+              <h1>03</h1>
+              <h3>
+                The Growth of Gaming
+              </h3>
+              <p>
+                How the pandemic has sparked fresh opportunities.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="./script.js"></script>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">HariKrishnasinh Zala</a>.
+  </div>
+</body>
+
+</html>
